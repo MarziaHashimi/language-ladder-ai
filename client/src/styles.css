@@ -1,0 +1,466 @@
+/*  General Layout */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fefefe;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: #0c1423;
+  color: #e8e8e8;
+}
+ /* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #141e30, #243b55);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0 0 15px 15px;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* transparency&blur when scrolled */
+.header.scrolled {
+  background: rgba(20, 30, 48, 0.8); 
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* new try */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.app-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn.active {
+  background: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+}
+
+.mode-toggle {
+  background: white;
+  color: #7b2ff7;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*  Word Form */
+.word-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(14, 13, 30, 0.407);
+}
+
+.word-form input,
+.word-form textarea,
+.word-form select {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.word-form button {
+    background: linear-gradient(90deg, #141e30, #243b55);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.word-form button:hover {
+  transform: scale(1.05);
+}
+
+/*  Word List */
+.word-list {
+  margin: 2rem auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.word-list input {
+  padding: 0.7rem;
+  width: 60%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/*  Flashcards */
+.word-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.word-card:hover {
+  transform: translateY(-5px);
+}
+
+.word-card h3 {
+  margin-top: 0;
+}
+
+.word-card p {
+  line-height: 1.5;
+}
+
+.sentences {
+  margin-top: 0.8rem;
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  margin-top: 0.8rem;
+  background: #ff4b5c;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Difficulty Colors */
+.card-easy {
+  border-top: 8px solid #50c878;
+  background-color: #dcf1e2;
+}
+
+.card-medium {
+  border-top: 8px solid #ffb300;
+  background-color: #fff7e2;
+}
+
+.card-hard {
+  border-top: 8px solid #ff4b5c;
+  background-color: #ffe7e9;
+}
+
+/*  Review Mode */
+.review-mode {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.review-mode button {
+   background: linear-gradient(90deg, #141e30, #243b55);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.review-card {
+  background: white;
+  max-width: 500px;
+  margin: 1.5rem auto;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(7, 17, 65, 0.266);
+}
+
+/*  Dark Mode Styling */
+body.dark .word-form,
+body.dark .word-card,
+body.dark .review-card {
+  background: linear-gradient(90deg, #202e41eb, #14213e);
+  color: #f1f1f1;
+  box-shadow: none;
+}
+
+body.dark .word-form input,
+body.dark .word-form textarea,
+body.dark .word-form select,
+body.dark .word-list input {
+  background: linear-gradient(90deg, #1b2436, #335072);
+  color: #fff;
+  border: 1px solid #666;
+}
+body.dark .word-form select{
+  color: #929191;
+}
+/*  sentences background in dark mode */
+body.dark .sentences {
+  background: linear-gradient(90deg, #2a3c53, #263657e2);
+  color: #f1f1f1;   
+}
+   body.dark .airplane-scroll{
+     background: linear-gradient(90deg, #bedbfb, rgb(125, 168, 253));
+   }
+
+/* Responsive Design */
+
+/* Medium tablets (landscape) */
+@media (max-width: 820px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .logo-title {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .header-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .word-form {
+    width: 92%;
+    padding: 1rem;
+  }
+
+  .word-list input {
+    width: 85%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+  }
+
+  .word-card {
+    padding: 1rem;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .mode-toggle,
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .word-form input,
+  .word-form textarea,
+  .word-form select {
+    font-size: 0.9rem;
+  }
+
+  .word-form button {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+
+  .word-list input {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .word-card {
+    padding: 1rem;
+  }
+
+  .review-mode button {
+    width: 90%;
+  }
+
+  .review-card {
+    width: 95%;
+  }
+}
+
+/* large screens */
+@media (min-width: 1400px) {
+  .word-list {
+    max-width: 1200px;
+  }
+  .word-form {
+    max-width: 700px;
+  }
+}
+/*  text wrap neatly on narrow viewports */
+.word-card,
+.review-card,
+.word-form {
+  word-wrap: break-word;
+}
+
+/* ---------------Airplane------------------- */
+
+.airplane-scroll {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  font-size: 1.4rem;
+  background: linear-gradient(90deg, #243b55, #141e30);
+  color: #66fcf1;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 1000;
+}
+
+.airplane-scroll:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(90deg, #141e30, #243b55);
+  color: #ffffff;
+}
+
+
+/* floating animation for subtle motion */
+@keyframes airplaneFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.airplane-scroll {
+  animation: airplaneFloat 4s ease-in-out infinite;
+}
+
+.airplane-scroll {
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.airplane-scroll:hover {
+  opacity: 1;
+}
+
+/* ---------- Splash Screen ---------- */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.splash-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom:0;
+  padding-bottom: 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+.splash-title {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.progress-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00c6ff, #2e5078);
+  transition: width 0.3s ease;
+}
+
+.splash-text {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
