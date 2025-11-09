@@ -1,0 +1,19 @@
+# Ignore environment variables
+.env
+
+# Ignore node_modules folder
+node_modules/
+
+# dependencies
+node_modules
+dist
+
+# local env files
+.env
+.env.local
+
+# build output
+.vite
+
+# misc
+.DS_Store
