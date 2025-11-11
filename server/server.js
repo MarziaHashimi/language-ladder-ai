@@ -21,7 +21,6 @@ app.post("/api/generate", async (req, res) => {
     const prompt = `
 You are a helpful English learning assistant.
 For the English word "${term}", return data in the following clear JSON structure:
-
 {
   "meaning": "Simple and clear English explanation of the word",
   "translations": {

@@ -1,7 +1,7 @@
 //src/api/openaiClient.js
 export async function generateAIResponse(data) {
   try {
-    const response = await fetch("http://localhost:5000/api/generate", {
+    const response = await fetch("language-ladder-ai-vm93.vercel.app/translate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
