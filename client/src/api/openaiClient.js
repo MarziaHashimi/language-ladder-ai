@@ -16,6 +16,7 @@
 //   }
 // }
 
+
 export async function generateAIResponse(data) {
   try {
     const response = await fetch("https://language-ladder-ai-vm93.vercel.app/api/generate", {
@@ -31,6 +32,7 @@ export async function generateAIResponse(data) {
     return "Error contacting AI server.";
   }
 }
+
 
 
 // ========================================
