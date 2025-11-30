@@ -16,10 +16,26 @@
 //   }
 // }
 
+//=====================start===============================================
+// export async function generateAIResponse(data) {
+//   try {
+//     const response = await fetch("https://language-ladder-ai-vm93.vercel.app/api/generate", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(data),
+//     });
 
+//     const result = await response.json();
+//     return result.text || "No response from AI.";
+//   } catch (err) {
+//     console.error("❌ AI fetch error:", err);
+//     return "Error contacting AI server.";
+//   }
+// }
+//========================end===================================
 export async function generateAIResponse(data) {
   try {
-    const response = await fetch("https://language-ladder-ai-vm93.vercel.app/api/generate", {
+    const response = await fetch(import.meta.env.VITE_API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
