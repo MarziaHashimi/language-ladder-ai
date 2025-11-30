@@ -1,8 +1,11 @@
+
 {
   "name": "language-ladder-backend",
   "version": "1.0.0",
   "type": "module",
+  "main": "api/generate.js",
   "dependencies": {
     "openai": "^4.0.0"
   }
 }
+
